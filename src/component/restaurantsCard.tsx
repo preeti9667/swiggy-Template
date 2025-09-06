@@ -8,7 +8,7 @@ const restaurantsCard:React.FC<Props> = ({restaurant}) => {
     return (
         <div>
               <div key={restaurant.info.id}
-               className="border-1 bg-gray-200  flex flex-col flex-wrap rounded-2xl h-[500px] p-3.5 hover:bg-gray-400 hover:text-white" >
+               className="border-1 bg-gray-200  flex flex-col flex-wrap rounded-2xl h-[550px] p-3.5 hover:bg-gray-400 hover:text-white" >
                 <img alt='image' height={10} width={300} className='rounded-2xl'
                  src={ IMAGE_CARD + restaurant.info.cloudinaryImageId 
                 }/>

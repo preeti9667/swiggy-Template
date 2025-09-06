@@ -79,7 +79,7 @@ const handleFilterData = () => {
       </div>
         {/* </div> */}
       {/* <div>{name}</div> */}
-        <div className='flex flex-wrap gap-7 p-5 ' >
+        <div className='grid grid-cols-4  gap-7 p-5 ' >
         {loading? <h1>Loading...</h1>:   
             restaurant.map((item,)=>(
               <div onClick={()=> handleClick(item.info.id)} key={item.info.id}> 
