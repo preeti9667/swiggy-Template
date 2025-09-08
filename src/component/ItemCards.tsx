@@ -19,9 +19,11 @@ const ItemCards:React.FC<props> = ({ItemCards}) =>{
        <div>{ItemCards.card.info.name}</div>
        <div>₹{ItemCards.card.info.price/100}</div>
        <div>⭐️{ItemCards.card.info.ratings.aggregatedRating.rating}</div>
-       <div className='text-stone-500 text-sm'>{ItemCards.card.info.description}</div>
+       <div className='text-stone-500 text-sm '>{ItemCards.card.info.description}</div>
         </div>
         {/* <div className=' border-1 text-end' > */}
+    
+
             <img  alt='image' className='rounded-2xl h-50 w-50 block'
             src={IMAGE_ID + ItemCards.card.info.imageId}/>
 
@@ -30,6 +32,7 @@ const ItemCards:React.FC<props> = ({ItemCards}) =>{
             ADD</button>
 
         </div>
+        
        
         </>
     )

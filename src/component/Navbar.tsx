@@ -10,7 +10,7 @@ function Navbar() {
   return (
    <>
   <div className='flex justify-between p-2 py-4 bg-slate-600 items-center text-white
-   sticky top-0 '>
+   sticky top-0  z-10'>
     <h1 className=''>Navbar</h1>
    <ul className='flex justify-between gap-5'>
    <NavLink to="/" className={({isActive}) => isActive ? "text-[rgb(22,202,130)]" : ""}>
