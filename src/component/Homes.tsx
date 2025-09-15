@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import RestaurantsCard from './restaurantsCard'
+import Menu from './Menu'
 import { RESTAURANT_API} from '../utils/Api'
+import RestaurantsCard from './restaurantsCard'
 
 interface items{
   cat: string
@@ -23,14 +24,6 @@ const [data, setData] = useState<items[]>([])
 const [loading, setLoading] = useState<boolean>(true)
 
 
-
-// const {data, loading} = useGetData({url:RESTAURANT_API})
-  // const dataList = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants as items[] || [] 
- 
-  // console.log(dataList)
-  //  (json?.data?.cards[1].card.card.gridElements.infoWithStyle.restaurants)
-  // const dataList1 =  data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants as items[] || [] 
-
   const getData = async() => {
     try { 
     const res = await fetch(RESTAURANT_API)
@@ -49,7 +42,7 @@ const [loading, setLoading] = useState<boolean>(true)
   }, [])
 
 const handleClick = (id:string)=>{
-  Router(`/RestaurantAbout/${id}`)
+  Router(`/Menu/${id}`)
 }
 
 const handleSearch = () =>{
@@ -63,10 +56,13 @@ const handleFilterData = () => {
   setRestaurant(filterData)
 }
   return (
-    <div className='text-red w-11/12 m-auto'>
-      <div className='flex gap-2 items-center'>
-        <div className='flex gap-2 p-3'>
-          <input value={search} className='border-1 rounded-2xl p-2 w-[300px]' placeholder='search'
+    <div className='text-red w-11/12 m-auto sm:w-10/12'>
+      <div 
+      className='md:flex lg:flex xl:flex sm:flex items-center
+       sm:p-1 md:p-1 lg:p-1 xl:p-1 gap-3'
+>
+        <div className='flex gap-2 pt-5 pb-5'>
+          <input value={search} className='border-1 rounded-2xl p-2 lg:w-[300px] md:w-[300px] xl:w-[300px]  sm:w-[200px] ' placeholder='search'
            onChange={(e)=> setSearch(e.target.value)} />
           <button onClick={handleSearch}
            className='cursor-pointer text-white px-5 py-1 rounded-2xl bg-[#1a1617a1]'>search</button>
@@ -79,11 +75,11 @@ const handleFilterData = () => {
       </div>
         {/* </div> */}
       {/* <div>{name}</div> */}
-        <div className='grid grid-cols-4  gap-7 p-5 ' >
+        <div className='grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-7 p-5 ' >
         {loading? <h1>Loading...</h1>:   
             restaurant.map((item,)=>(
               <div onClick={()=> handleClick(item.info.id)} key={item.info.id}> 
-                  <RestaurantsCard restaurant={item}/>
+               <RestaurantsCard restaurant={item} />
               </div>
             ))
           }
@@ -92,3 +88,4 @@ const handleFilterData = () => {
     </div>
   )
 }
+

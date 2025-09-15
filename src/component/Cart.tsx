@@ -12,8 +12,8 @@ const handleClearCart = () => {
     dispatch(clearCart())
 }
   return (
-    <div className='flex flex-col w-1/2 m-auto mt-4 '>
-      <div className='flex justify-between'>
+    <div className='flex flex-col sm:w-12/12 md:w-10/12 lg:w-6/12 xl:w-6/12 m-auto mt-4 '>
+      <div className='flex justify-between p-2'>
         <button className='  px-5 py-3  rounded-md w-40 bg-slate-400 text-white cursor-pointer'
          onClick={handleClearCart}>Clear Cart</button>
          <span className='border-1 rounded-2xl px-5 py-3'>Total {getItems.length}</span>

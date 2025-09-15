@@ -27,7 +27,8 @@ const LogIn = () => {
 }
 
   return (
-    <div className="w-[500px]  m-auto mt-10 border border-1 h-[600px]  bg-slate-500 shadow-2xl
+    <div className="sm:w-[300px] md:w-[400px] lg:w-[400px] xl:w-[400px]
+      m-auto mt-5  border-1 h-[600px]  bg-slate-500 sm:shadow-none lg:shadow-2xl
    text-white rounded-3xl p-10">
       <div className=' flex flex-col items-center justify-center gap-[20px] '>
       <span className='text-4xl'>{login ? "LogIn" : "SignUp"}</span>

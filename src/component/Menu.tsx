@@ -42,7 +42,7 @@ interface title {
 }
 
 
-export default function RestaurantAbout() {
+export default function Menu() {
 const params = useParams();
 const id = params.id
 const [openList, setOpenList] = useState<{ [key: string]: boolean }>({});
@@ -63,14 +63,14 @@ const openDropdown = (categoryId: string) => {
   return (
     <div>
       {loading && 
-      <div className=' w-6/12 m-auto mt-9'> 
+      <div className='w-6/12 m-auto mt-9'> 
 
         <h1>Loading...</h1>
       </div>
 
       }
-      <div className=' w-6/12 m-auto mt-9'>
-      <h1 className=' font-bold text-3xl'>{name?.name}</h1>
+      <div className='sm:w-12/12 md:w-10/12 lg:w-6/12 xl:w-6/12 m-auto mt-9'>
+      <h1 className=' font-bold text-3xl pl-5'>{name?.name}</h1>
       <div className=' border-1 flex flex-col shadow-2xl p-1 m-5 rounded-2xl'>
         <span>{name?.avgRating}</span>
         <span>{name?.costForTwoMessage}</span>
